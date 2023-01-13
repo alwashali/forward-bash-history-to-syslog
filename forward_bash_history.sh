@@ -47,7 +47,7 @@ cat << EOF >> /etc/logrotate.d/bash_history
     rotate 8
     compress
     notifempty
-    nocreate
+
 }
 EOF
 
