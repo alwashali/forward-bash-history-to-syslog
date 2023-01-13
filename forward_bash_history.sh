@@ -40,15 +40,19 @@ EOF
 
 # rotate file
 cat << EOF >> /etc/logrotate.d/bash_history
-/var/log/bash_history/*.log {
-    maxsize 50M
-    hourly
-    missingok
-    rotate 8
-    compress
-    notifempty
-
+/var/log/bash_history/*.log
+ {
+        rotate 7
+        daily
+        missingok
+        notifempty
+        delaycompress
+        compress
+        postrotate
+                /usr/lib/rsyslog/rsyslog-rotate
+        endscript
 }
+
 EOF
 
 
