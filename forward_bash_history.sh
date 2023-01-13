@@ -30,7 +30,7 @@ EOF
 # select the facility you want, *.* is very intense. authpriv.* could be a good start
 cat << EOF >> /etc/rsyslog.conf
 ## logs fowarding to syslog server 
-*.*;local6.*                                          @192.168.111.111:514
+*.*;local6.*                                          @syslog_IP:514
 EOF
 
 
